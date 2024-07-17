@@ -97,8 +97,10 @@ public class Servis {
 	        ));
 	}
 	
-	 public String sendGetRequest(String city, String apiKey) {
-	        String url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+	 public String sendGetRequest() {
+			String apiKey = "b74293d1b68ac659b7f08bdc1897881b";
+			String sehir = "Istanbul";
+	        String url = "https://api.openweathermap.org/data/2.5/weather?q=" + sehir + "&appid=" + apiKey;
 	        HttpClient client = HttpClient.newHttpClient();
 	        HttpRequest request = HttpRequest.newBuilder()
 	                .uri(URI.create(url))
@@ -113,7 +115,7 @@ public class Servis {
 	        }
 	    }
 
-	    public String sendPostRequest(String city, String apiKey) {
+	    public String sendPostRequest() {
 	    	HttpRequest request = HttpRequest.newBuilder()
 	    			.uri(URI.create("https://google-translate1.p.rapidapi.com/language/translate/v2/detect"))
 	    			.header("x-rapidapi-key", "3d9aa34e38mshc3fb140d8eddbd8p11b7a1jsnb32f263e84af")

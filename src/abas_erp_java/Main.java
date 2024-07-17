@@ -1,17 +1,12 @@
 package abas_erp_java;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Main {
 
 	public static void main(String[] args) {
-		String apiKey = "b74293d1b68ac659b7f08bdc1897881b";
-		String sehir = "Istanbul";
+
 		
 		Servis servis = new Servis();
 
@@ -54,10 +49,12 @@ public class Main {
 				+" | 2005: "+servis.malMiktarıAra(siparisListesi,2005)
 				+" | 2006: "+servis.malMiktarıAra(siparisListesi,2006));
 		
-        String getResponse = servis.sendGetRequest(sehir, apiKey);
+		//Weather API
+        String getResponse = servis.sendGetRequest();
         System.out.println("GET Response: " + getResponse);
-
-        String postResponse = servis.sendPostRequest(sehir, apiKey);
+        
+        
+        String postResponse = servis.sendPostRequest();
         System.out.println("POST Response: " + postResponse);
 
 	}
